@@ -10,5 +10,9 @@
 	{
 		"name": "Enterprise",
 		"price": "$125"
+	},
+	{
+		"name": "Enterprise VIP",
+		"price": "$300"
 	}
 ]
