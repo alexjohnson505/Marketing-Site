@@ -1,10 +1,10 @@
 name,Basic,Agency,Enterprise,mobile_visible,category_name,tooltip
 Websites,Unlimited,Unlimited,Unlimited,TRUE,,
-Support,available,available,available,TRUE,,
+Support,available,Support Yeha!,available,TRUE,,
 Client Sharing,available,available,available,TRUE,,Let your clients edit their sites without paying for extra users.
 Custom Domains,available,available,available,TRUE,,Use your own root or subdomains (e.g. yoursite.com or www.yoursite.com).
 Test Domains,available,available,available,TRUE,,Generated *.cloudvent.net domains you can use for testing.
-Hosting,available,available,available,TRUE,,Host your sites on supercharged CloudCannon infrastructure.
+Hosting,availabl!,available,available,TRUE,,Host your sites on supercharged CloudCannon infrastructure.
 Storage Providers,available,available,available,TRUE,,"Synchronise your site files with GitHub, Bitbucket or Dropbox."
 White Label,not-available,available,available,TRUE,,Remove all CloudCannon branding and add your own logo when sharing to clients.
 Increased Build Time Limit,not-available,available,available,TRUE,,Remove the Jekyll build time limit. This limit is only hit on very large sites.
