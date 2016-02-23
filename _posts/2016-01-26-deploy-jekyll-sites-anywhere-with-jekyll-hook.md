@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Deploy Jekyll sites anywhere using jekyll-hook
+title: 'Deploy Jekyll sites anywhere using jekyll-hook! Yeah'
 header: Deploy Jekyll sites anywhere using jekyll-hook
 category: Tutorial
 post_image: /img/blog/jekyll-hook/github.png
 post_image_type: image/png
 post_image_width: 900
 post_image_height: 563
-author: mike
+author: george
 ---
 
-[In the last tutorial](http://cloudcannon.com/tutorial/2016/01/21/deploy-jekyll-sites-to-s3-using-travis-ci/), we used [Travis CI](https://travis-ci.org) to deploy a Jekyll site to Amazon S3. This tutorial covers using [jekyll-hook](https://github.com/developmentseed/jekyll-hook) to automatically deploy changes from GitHub/CloudCannon to your own server.
+[In the last tutorial](http://cloudcannon.com/tutorial/2016/01/21/deploy-jekyll-sites-to-s3-using-travis-ci/), we used [Travis CI](https://travis-ci.org) to deploy a Jekyll site to Amazon S3. This tutorial covers using [jekyll-hook](https://github.com/developmentseed/jekyll-hook) to automatically deploy changes from GitHub/CloudCannon to your own server. Cool!
 
 ### What is jekyll-hook?
 
@@ -51,7 +51,6 @@ $ npm install
 
 Copy the sample configuration to `config.json`:
 
-
 {% highlight bash %}
 $ cp config.sample.json config.json
 {% endhighlight %}
@@ -61,7 +60,6 @@ Open `config.json` in a text editor.
 With this script you can configure jekyll-hook to listen to a particular server, run special build scripts for a particular Git branch or send an email every time there's a build. The default `config.json` get us most of the way there, we just need to ensure changes can be pulled in from our account.
 
 Change `accounts` to your GitHub account or organisation.
-
 
 {% highlight bash %}
 $ nano config.json
@@ -99,6 +97,7 @@ Here's my complete `config.json`:
 As you can see from the configuration, jekyll-hook is going to run `./scripts/build.sh` when it detects a change. The default build script pulls the latest commits to the local repository and runs `jekyll build`. We don't need to change anything in this file.
 
 Here's my `./scripts/build.sh`:
+
 {% highlight bash %}
 #!/bin/bash
 set -e
@@ -133,7 +132,7 @@ cd -
 
 After the build finishes, jekyll-hook, runs `./scripts/publish.sh`. This script moves the built site to your web server directory.
 
-By default jekyll-hook deploys the site to `/usr/share/nginx/html/$repo`. `$repo` is one of the variables jekyll-hook makes available to use in the path. You can also use  `$branch`, `$owner`, `$giturl`, `$source` and `$build`.
+By default jekyll-hook deploys the site to `/usr/share/nginx/html/$repo`. `$repo` is one of the variables jekyll-hook makes available to use in the path. You can also use `$branch`, `$owner`, `$giturl`, `$source` and `$build`.
 
 Change `site` to your desired location.
 
@@ -173,13 +172,13 @@ Jekyll-hook is set up to listen for changes from GitHub. When there is a change 
 
 Now we need GitHub to send jekyll-hook a webhook when there's a commit to the repository.
 
-Open your repository on GitHub. Then go to Settings -> Webhooks & services.
+Open your repository on GitHub. Then go to Settings -&gt; Webhooks & services.
 
-![GitHub webhooks](/img/blog/jekyll-hook/github.png){:.screenshot}
+![GitHub webhooks](/img/blog/jekyll-hook/github.png){: .screenshot}
 
 Click Add webhook. Set the Payload URL to point at your jekyll-hook server `http://example.org:8080/hooks/jekyll/:branch` where `:branch` is the branch you want to publish. The rest of the defaults are fine, press Add webhook.
 
-![GitHub webhook](/img/blog/jekyll-hook/github-webhook.png){:.screenshot}
+![GitHub webhook](/img/blog/jekyll-hook/github-webhook.png){: .screenshot}
 
 ### Deploying the site
 
